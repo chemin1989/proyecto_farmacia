@@ -80,7 +80,9 @@ public class MedicamentosDAOImplReg extends GenericDAO implements MedicamentosDA
 	public Medicamento borrarMedicamentoPorId(int id) {
 		conectar();
 		try {
-			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQLc.SQL_BORRAR_MEDICAMENTO_POR_ID);
+			PreparedStatement ps = 
+					miConexion.prepareStatement(ConstantesSQLc.SQL_BORRAR_MEDICAMENTO_POR_ID);
+			System.out.println("TONTO:" + id);
 			ps.setInt(1, id);
 			ps.execute();
 			ps.close();

@@ -34,6 +34,7 @@ public class MedicamentosDAOImplListFarm extends GenericDAO implements Medicamen
 				medicamentoFarmacia.setPrecio(resultado.getDouble("precio"));
 				medicamentoFarmacia.setCantidad(resultado.getInt("cantidad"));
 				medicamentoFarmacia.setCodigoMedicamento(resultado.getString("codigo"));
+				medicamentoFarmacia.setId(resultado.getInt("id"));
 				medicamentosFarmacia.add(medicamentoFarmacia);
 			}
 				

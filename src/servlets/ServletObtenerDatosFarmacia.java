@@ -29,7 +29,12 @@ public class ServletObtenerDatosFarmacia extends HttpServlet {
 		int idFarmacia = farmacia.getId();
 		request.getSession().setAttribute("idFarmacia", idFarmacia);
 		
-		request.setAttribute("farmacia", farmacia);
+		request.getSession().setAttribute("farmaciaNombre", farmacia.getNombre());
+		request.getSession().setAttribute("farmaciaEmail", farmacia.getEmail());
+		request.getSession().setAttribute("farmaciaTelefono", farmacia.getTelefono());
+		request.getSession().setAttribute("farmaciaDireccion", farmacia.getDireccion());
+		request.getSession().setAttribute("farmaciaCodigoPostal", farmacia.getCodigoPostal());
+		
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 		

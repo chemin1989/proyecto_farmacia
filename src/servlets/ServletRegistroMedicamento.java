@@ -42,7 +42,7 @@ public class ServletRegistroMedicamento extends HttpServlet {
 		dao.registrarMedicamento(medicamentoAregistrar, idFarmacia);
 		System.out.println("Medicamento registrado ok");	
 		
-		request.getRequestDispatcher("buscador.jsp").forward(request, response);
+		request.getRequestDispatcher("ServletListadoMedicamentosFarmacia").forward(request, response);
 	}
 
 }

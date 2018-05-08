@@ -18,6 +18,7 @@ public class ServletBorrarMedicamento extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
+		System.out.println("Listo:" + id);
 		MedicamentosDAOImplReg dao = new MedicamentosDAOImplReg();
 		Medicamento borrar = dao.borrarMedicamentoPorId(id);
 		request.getRequestDispatcher("ServletListadoMedicamentosFarmacia").forward(request, response);

@@ -31,7 +31,8 @@ public class ServletLoginFarmacias extends HttpServlet {
 			
 			
 		}else {
-			request.setAttribute("mensaje", "email y/o pass incorrectos");
+			// request.setAttribute("mensaje", "email y/o pass incorrectos");
+			System.out.println("TONTOOOOOOO");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		
 		}

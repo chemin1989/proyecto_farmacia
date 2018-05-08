@@ -21,7 +21,7 @@ public class ServletListadoMedicamentos extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-		String busqueda = request.getParameter("campoBusqueda");
+		String busqueda = (String) request.getSession().getAttribute("busqueda");
 		
 		if (busqueda==null) {
 			busqueda="";
@@ -31,12 +31,15 @@ public class ServletListadoMedicamentos extends HttpServlet {
 		String cuantos = request.getParameter("cuantos");
 		
 		int desdeInt = 0;
-		int cuantosInt = 20;
+		int cuantosInt = 15;
 		
 		if(desde != null && cuantos != null){
 			desdeInt = Integer.parseInt(desde);
 			cuantosInt = Integer.parseInt(cuantos);
 		}
+		
+		System.out.println(desdeInt);
+		System.out.println(cuantosInt);
 		
 		MedicamentosDAOListFarm medicamentosDAO = new MedicamentosDAOImplListFarm();
 		List<Medicamento> medicamentos = 
@@ -45,9 +48,11 @@ public class ServletListadoMedicamentos extends HttpServlet {
 		
 		int totalBusqueda = medicamentosDAO.obtenerTotalMedicamentos(busqueda);
 		request.getSession().setAttribute("medicamentosTotales", totalBusqueda);
+		System.out.println(busqueda);
+		System.out.println(totalBusqueda);
 		request.setAttribute("medicamentos", medicamentos);
-		request.setAttribute("desdeSiguiente", desdeInt + 20);
-		request.setAttribute("desdeAnterior", desdeInt - 20);
+		request.setAttribute("desdeSiguiente", desdeInt + 15);
+		request.setAttribute("desdeAnterior", desdeInt - 15);
 		request.getRequestDispatcher("listadoMedicamentos.jsp").forward(request, response);
 		
 	}
