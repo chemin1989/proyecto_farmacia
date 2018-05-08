@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
@@ -15,7 +14,8 @@
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/menu_topexpand.css" />
-		<link rel="stylesheet" type="text/css" href="css/table.css" />
+		
+		
 		<!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -26,7 +26,7 @@
 				<nav class="menu">
 					<div class="icon-list">
 						<a href="buscador.jsp"><i class="fa fa-fw fa-star-o"></i><span>Registra tu medicamento</span></a>
-						<a href="ServletListadoMedicamentosFarmacia"><i class="fa fa-fw fa-bell-o"></i><span>Listar Medicamentos Propios</span></a>
+						<a href="ServletListadoMedicamentosFarmacia"><i class="fa fa-fw fa-bell-o"></i><span>Listar Medicamento Propios</span></a>
 						<a href="buscador2.jsp"><i class="fa fa-fw fa-comment-o"></i><span>Buscar medicamentos</span></a>
 						<a href="ServletLogOut"><i class="fa fa-fw fa-bar-chart-o"></i><span>Cerrar Sesión</span></a>
 						</form>
@@ -40,17 +40,41 @@
 						<div class="codrops-links">
 							<a class="codrops-icon codrops-icon-prev" href="index.jsp"><span>Inicio</span></a>
 						</div>
-						<h1>PharmaLance <span>Trabajando para mejorar el mundo</span></h1>
-						<h2 style="color:red">Datos farmacia</h2>
-						<div>
-						<ul style="list-style-type: square; color:#abef56">
-						  <b><h3><li>Nombre: ${sessionScope.farmaciaNombre}</li>
-						  <li>Correo electrónico: ${sessionScope.farmaciaEmail}</li>
-						  <li>Teléfono: ${sessionScope.farmaciaTelefono}</li>
-						  <li>Dirección: ${sessionScope.farmaciaDireccion}</li>
-						  <li>Código Postal: ${sessionScope.farmaciaCodigoPostal}</li></h3></b>
-						</ul>
-						</div>
+						<h1>PharmaLance</h1>
+						<h2 style="color:red" align="center"><b>Registro de medicamentos</b></h2>
+						<form class="form-horizontal" method="post" action="ServletRegistroMedicamento">
+						  <div class="form-group">
+						    <label for="text1" class="control-label col-xs-4">Nombre</label> 
+						    <div class="col-xs-8">
+						      <input id="text1" name="campoNombre" type="text" value="${medicamentoSeleccionado.nombre}" class="form-control" readonly>
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="text2" class="control-label col-xs-4">Código Nacional</label> 
+						    <div class="col-xs-8">
+						      <input id="text2" name="campoCodigo" value="${medicamentoSeleccionado.codigoMedicamento}" type="text" class="form-control" readonly>
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="text3" class="control-label col-xs-4">Precio</label> 
+						    <div class="col-xs-8">
+						      <input id="text3" name="campoPrecio" value="${medicamentoSeleccionado.precio}" type="text" class="form-control" readonly>
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="text" class="control-label col-xs-4">Cantidad</label> 
+						    <div class="col-xs-8">
+						      <input id="text" name="campoCantidad" type="text" class="form-control" required="required">
+						    </div>
+						  </div> 
+						  <div class="form-group row">
+						    <div class="col-xs-offset-4 col-xs-8">
+						      <button name="submit" type="submit" class="btn btn-primary"> Registrar </button>
+						    </div>
+						  </div>
+						</form>
+						</nav>
+						</p>
 					</header>
 					<!-- Related demos -->
 					
@@ -61,3 +85,13 @@
 		<script src="js/main.js"></script>
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+

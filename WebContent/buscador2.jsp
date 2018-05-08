@@ -1,4 +1,3 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -15,7 +14,6 @@
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/menu_topexpand.css" />
-		<link rel="stylesheet" type="text/css" href="css/table.css" />
 		<!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -42,24 +40,12 @@
 							<a class="codrops-icon codrops-icon-prev" href="index.jsp"><span>Inicio</span></a>
 						</div>
 						<h1>PharmaLance <span>Trabajando para mejorar el mundo</span></h1>
-						<h2 style="color:red">Seleccione un medicamento</h2>
-						<c:forEach items="${datosMedicamentos}" var="datosMedicamento">
-							<form action="ServletSeleccionMedicamentos?id=${datosMedicamento.id}" method="post">								
-								<table>
-							  <tr style="color:#abef56">
-								<th>Nombre</th>
-    							<th>Precio</th> 								
-    							<th>Código Nacional</th>
-							  </tr>
-							   <tr>
-							   <td>${datosMedicamento.nombre}</td>
-							   <td>${datosMedicamento.precio} </td>
-							   <td>${datosMedicamento.codigoMedicamento}</td>
-							   <td><input type="submit" value="SELECCIONAR"/></td>
-							   </tr>
-								</table>
-							</form>
-						</c:forEach>
+						<h2 style="color:red">Buscador general de anuncios de medicamentos</h2> 
+		
+						<form action="ServletBusquedaMedicamentos" method="post"> <div class="input-group"> 
+						<input type="text" class="form-control" size="50" placeholder="Buscar medicamento" 
+							name="campoBusqueda"/> 
+						<button style="inline" type="submit"> BUSCAR </button> 
 						</nav>
 						</p>
 					</header>
@@ -68,44 +54,13 @@
 				</div>
 			</div><!-- /content-wrap -->
 		</div><!-- /container -->
-		<script src="js/classie.js"></script>
+		
+		
+		</form> 
+	    <script src="js/classie.js"></script>
 		<script src="js/main.js"></script>
 	</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	</html>
 
 
 

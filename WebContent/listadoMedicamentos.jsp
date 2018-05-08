@@ -10,7 +10,7 @@
 		<title>PharmaLance</title>
 		<meta name="description" content="Modern effects and styles for off-canvas navigation with CSS transitions and SVG animations using Snap.svg" />
 		<meta name="keywords" content="PharmaLance, reciclar, medicamento, farmacias, comprar, intercambiar" />
-		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="shortcut icon" href="img/logo.ico">
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
@@ -27,8 +27,8 @@
 					<div class="icon-list">
 						<a href="buscador.jsp"><i class="fa fa-fw fa-star-o"></i><span>Registra tu medicamento</span></a>
 						<a href="ServletListadoMedicamentosFarmacia"><i class="fa fa-fw fa-bell-o"></i><span>Listar Medicamentos Propios</span></a>
-						<a href="ServletListadoMedicamentos"><i class="fa fa-fw fa-comment-o"></i><span>Existencias</span></a>
-						<a href="ServletLogOut"><i class="fa fa-fw fa-bar-chart-o"></i><span>Cerrar Sesion</span></a>
+						<a href="buscador2.jsp"><i class="fa fa-fw fa-comment-o"></i><span>Buscar medicamentos</span></a>
+						<a href="ServletLogOut"><i class="fa fa-fw fa-bar-chart-o"></i><span>Cerrar Sesión</span></a>
 						</form>
 					</div>
 				</nav>
@@ -41,25 +41,25 @@
 							<a class="codrops-icon codrops-icon-prev" href="index.jsp"><span>Inicio</span></a>
 						</div>
 						<h1>PharmaLance <span>Trabajando para mejorar el mundo</span></h1>
-						<h1>Listado Medicamentos</h1>
+						<h2 style="color:red">Listado medicamentos</h2>
 							
 							<div>
 								<c:if test= "${desdeAnterior >= 0}">
-									<a href="ServletListadoMedicamentos?desde=${desdeAnterior}&cuantos=20"> Anterior </a> &nbsp;
+									<b><a href="ServletListadoMedicamentos?desde=${desdeAnterior}&cuantos=15" style="color:black"> ANTERIOR </a></b> &nbsp;
 								</c:if>
 								<c:if test="${desdeSiguiente < sessionScope.medicamentosTotales}">
-								<a href="ServletListadoMedicamentos?desde=${desdeSiguiente}&cuantos=20"> Siguiente </a>
+									<b><a href="ServletListadoMedicamentos?desde=${desdeSiguiente}&cuantos=15" style="color:black"> SIGUIENTE </a></b>
 								</c:if>
 							</div>
 
 						<c:forEach items="${medicamentos}" var="m">
 							<form action="ServletSeleccionMedicamentos?id=${datosMedicamento.id}" method="post">								
 								<table>
-							  <tr>
+							  <tr style="color:#abef56">
 								<th>Fármaco</th>
     							<th>Precio</th> 								
     							<th>Cantidad</th>
-    							<th>Codigo Nacional</th>
+    							<th>Código Nacional</th>
     							<th>Farmacia</th>
     							<th>Correo eléctrónico</th>
     							<th>Teléfono</th>
@@ -75,7 +75,6 @@
 							   <td>${m.farmacia.email}</td>
 							   <td>${m.farmacia.telefono}</td>
 							   <td>${m.farmacia.direccion}</td>
-							   <td><input type="submit" href="" value="Intercambiar"/></td>
 							   </tr>
 								</table>
 							</form>

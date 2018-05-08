@@ -9,7 +9,7 @@
 		<title>PharmaLance</title>
 		<meta name="description" content="Modern effects and styles for off-canvas navigation with CSS transitions and SVG animations using Snap.svg" />
 		<meta name="keywords" content="PharmaLance, reciclar, medicamento, farmacias, comprar, intercambiar" />
-		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="shortcut icon" href="img/logo.ico">
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
@@ -27,8 +27,8 @@
 					<div class="icon-list">
 						<a href="buscador.jsp"><i class="fa fa-fw fa-star-o"></i><span>Registra tu medicamento</span></a>
 						<a href="ServletListadoMedicamentosFarmacia"><i class="fa fa-fw fa-bell-o"></i><span>Listar Medicamento Propios</span></a>
-						<a href="ServletListadoMedicamentos"><i class="fa fa-fw fa-comment-o"></i><span>Existencias</span></a>
-						<a href="ServletLogOut"><i class="fa fa-fw fa-bar-chart-o"></i><span>Cerrar Sesion</span></a>
+						<a href="buscador2.jsp"><i class="fa fa-fw fa-comment-o"></i><span>Buscar medicamentos</span></a>
+						<a href="ServletLogOut"><i class="fa fa-fw fa-bar-chart-o"></i><span>Cerrar Sesión</span></a>
 						</form>
 					</div>
 				</nav>
@@ -41,7 +41,7 @@
 							<a class="codrops-icon codrops-icon-prev" href="index.jsp"><span>Inicio</span></a>
 						</div>
 						<h1>PharmaLance</h1>
-						<h2 align="center"><b>Registro de medicamentos</b></h2>
+						<h2 align="center"  style="color:red"><b>Edición del medicamento</b></h2>
 						<form class="form-horizontal" action="ServletGuardarCambiosMedicamento" method="post">
 						  <div class="form-group">
 						    <label for="text1" class="control-label col-xs-4">Nombre</label> 
@@ -64,7 +64,7 @@
 						  <div class="form-group">
 						    <label for="text" class="control-label col-xs-4">Cantidad</label> 
 						    <div class="col-xs-8">
-						      <input id="text" name="campoCantidad" value="" type="text" class="form-control" required="required">
+						      <input id="text" name="campoCantidad" value="${medicamentoAeditar.cantidad}" type="text" class="form-control" required="required">
 						    </div>
 						  </div> 
 						  	<input type="hidden" name="campoId" value="${medicamentoAeditar.id}"/>

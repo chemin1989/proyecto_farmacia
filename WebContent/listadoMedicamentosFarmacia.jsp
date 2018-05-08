@@ -26,10 +26,9 @@
 				<nav class="menu">
 					<div class="icon-list">
 						<a href="buscador.jsp"><i class="fa fa-fw fa-star-o"></i><span>Registra tu medicamento</span></a>
-						<a href="ServletListadoMedicamentosFarmacia"><i class="fa fa-fw fa-bell-o"></i><span>Listado Medicamentos Propios</span></a>
+						<a href="ServletListadoMedicamentosFarmacia"><i class="fa fa-fw fa-bell-o"></i><span>Listar Medicamentos Propios</span></a>
 						<a href="buscador2.jsp"><i class="fa fa-fw fa-comment-o"></i><span>Buscar medicamentos</span></a>
 						<a href="ServletLogOut"><i class="fa fa-fw fa-bar-chart-o"></i><span>Cerrar Sesión</span></a>
-
 						</form>
 					</div>
 				</nav>
@@ -41,24 +40,27 @@
 						<div class="codrops-links">
 							<a class="codrops-icon codrops-icon-prev" href="index.jsp"><span>Inicio</span></a>
 						</div>
+						<div>
 						<h1>PharmaLance <span>Trabajando para mejorar el mundo</span></h1>
-						<h2 style="color:red">Seleccione un medicamento</h2>
-						<c:forEach items="${datosMedicamentos}" var="datosMedicamento">
-							<form action="ServletSeleccionMedicamentos?id=${datosMedicamento.id}" method="post">								
+						</div>
+						<h2 style="color:red">Listado medicamentos propios</h2>
+						<c:forEach items="${medicamentos}" var="m">								
 								<table>
 							  <tr style="color:#abef56">
 								<th>Nombre</th>
     							<th>Precio</th> 								
+    							<th>Cantidad</th>
     							<th>Código Nacional</th>
 							  </tr>
 							   <tr>
-							   <td>${datosMedicamento.nombre}</td>
-							   <td>${datosMedicamento.precio} </td>
-							   <td>${datosMedicamento.codigoMedicamento}</td>
-							   <td><input type="submit" value="SELECCIONAR"/></td>
+							   <td>${m.nombre}</td>
+							   <td>${m.precio}</td>
+							   <td>${m.cantidad}</td>
+							   <td>${m.codigoMedicamento}</td>
+							   <td><a href="ServletBorrarMedicamento?id=${m.id}"> BORRAR </a></td>
+							   <td><a href="ServletEditarMedicamento?id=${m.id}"> EDITAR </a></td>
 							   </tr>
 								</table>
-							</form>
 						</c:forEach>
 						</nav>
 						</p>
@@ -72,40 +74,5 @@
 		<script src="js/main.js"></script>
 	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
