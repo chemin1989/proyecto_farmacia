@@ -9,7 +9,6 @@
   position: relative;
   z-index: 1;
   background: #FFFFFF;
-  
   max-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;
@@ -55,6 +54,7 @@
 }
 .form .register-form {
   display: none;
+  
 }
 .container {
   position: relative;
@@ -90,11 +90,18 @@
   color: #EF3B3A;
 }
 body {
-  background: #eff8ff; /* fallback for old browsers */
+  /*
+  background: #eff8ff; // fallback for old browsers
   background: -webkit-linear-gradient(right, #eff8ff, #eff8ff);
   background: -moz-linear-gradient(right, #eff8ff, #eff8ff);
   background: -o-linear-gradient(right, #eff8ff, #eff8ff);
   background: linear-gradient(to left, #eff8ff, #eff8ff);
+  */
+  
+  background-image: url(../img/logo3.png);
+  background-position : left;
+  background-attachment : fixed; */
+  
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      

@@ -31,7 +31,7 @@ body,
 
 .content {
 	position: relative;
-	background: #b4bad2;
+	background: #ba71b7;
 	padding-bottom: 12em;
 }
 
@@ -53,8 +53,8 @@ body,
 	padding: 0;
 	border: none;
 	text-indent: 2.5em;
-	color: transparent;
-	background: #8a92b3;
+	color: #ffffff;
+	background-color:rgba(0, 0, 0, 0);
 }
 
 .menu-button::before {
@@ -68,13 +68,13 @@ body,
 }
 
 .menu-button:hover {
-	opacity: 0.6;
+	opacity: 0.8;
 }
 
 /* Menu */
 .menu-wrap {
 	z-index: 999;
-	background: #8a92b3;
+	background: #abef56;
 	-webkit-transition: width 0.4s, height 0.4s, -webkit-transform 0.4s;
 	transition: width 0.4s, height 0.4s, transform 0.4s;
 	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
